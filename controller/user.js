@@ -1,7 +1,11 @@
-const { logger, helper: { ok, fail } } = require('../utils');
+const {
+  logger,
+  api: { ok }
+} = require('../utils');
 
 class UserController {
-  hi(ctx) {
+  hi (ctx) {
+    logger.info('hi controller');
     ctx.body = ok('hi ~');
   }
 }
