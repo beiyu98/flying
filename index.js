@@ -7,7 +7,7 @@ const routes = require('./routes');
 const app = new Koa();
 
 app.use(bodyParser());
-app.use(routes.routes(),routes.allowedMethods());
+app.use(routes.routes(), routes.allowedMethods());
 app.listen(config.port);
 
 logger.info(`server is running at ${config.port}`);

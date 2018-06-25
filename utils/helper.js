@@ -3,7 +3,7 @@ const util = require('util');
 /**
  * 深拷贝合并对象
  */
-function extend(target = {}, ...args) {
+function extend (target = {}, ...args) {
   let i = 0;
   const length = args.length;
   let options;
@@ -36,11 +36,11 @@ function extend(target = {}, ...args) {
   return target;
 }
 
-function ok(data = {}, msg = 'success', code = 200) {
+function ok (data = {}, msg = 'success', code = 200) {
   return { code, msg, data };
 }
 
-function fail(code = 400, msg = 'operate failed', data = {}) {
+function fail (code = 400, msg = 'operate failed', data = {}) {
   return { code, msg, data };
 }
 
