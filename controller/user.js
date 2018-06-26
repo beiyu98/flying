@@ -1,5 +1,5 @@
 const { api: { ok } } = require('../utils');
-const logger = require('log4js');
+const logger = require('log4js').getLogger('UserController');
 
 class UserController {
   hi (ctx) {
