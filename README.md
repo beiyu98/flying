@@ -1,14 +1,20 @@
 # flying
-koa server template
+> koa server template
 
 ## tools:
-- (parameter)[https://github.com/node-modules/parameter]
-- (pm2)[https://pm2.io/doc/en/runtime/overview/]
+- [parameter HTTP参数校验](https://github.com/node-modules/parameter)
 
 ## db:
 - sequlize
-- mongoose
+- mongoose - todo
 - ioredis
 
+## log
+- log4js
+
 # mq
-- kue
+- kue - todo
+
+# deploy
+- [pm2](https://pm2.io/doc/en/runtime/overview/)
+
