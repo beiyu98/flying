@@ -7,8 +7,11 @@ const config = require('./config');
 const { helper: { fail }, getLogger } = require('./utils');
 const logger = getLogger('app');
 
-// model
-// require('./model');
+// init mysql
+// require('./model/sequlize');
+
+// init redis
+// require('./model/redis');
 
 const routes = require('./routes');
 const { httpLogger } = require('./middleware');
