@@ -1,4 +1,4 @@
-const logger = require('log4js').getLogger('middleware:http-logger');
+const logger = require('../utils').getLogger('middleware:http-logger');
 module.exports = opts => {
   return async (ctx, next) => {
     const start = Date.now();

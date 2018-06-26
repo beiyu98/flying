@@ -25,4 +25,4 @@ const options = {
 
 log4js.configure(options);
 
-module.exports = {logger: log4js};
+module.exports = {logger: category => log4js.getLogger(category || 'default')};

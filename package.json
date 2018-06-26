@@ -23,6 +23,7 @@
   "homepage": "https://github.com/brucecodezone/flying#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "ioredis": "^3.2.2",
     "koa": "^2.5.1",
     "koa-bodyparser": "^4.2.1",
     "koa-onerror": "^4.0.0",
