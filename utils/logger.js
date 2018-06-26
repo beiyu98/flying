@@ -1,48 +1,28 @@
-const winston = require('winston');
-const { combine, timestamp, label, printf, colorize } = winston.format;
-const DailyRotateFile = require('winston-daily-rotate-file');
-const env = process.env.NODE_ENV;
+const log4js = require('log4js');
 
-const myFormat = printf(info => {
-  const splatSymbol = Object.getOwnPropertySymbols(info)[1];
-  let label = info[splatSymbol];
-  return `${info.timestamp} [${info.level}] [${label || info.label}]: ${info.message}`;
-});
+const isProd = process.env.NODE_ENV === 'prod';
+const appender = isProd ? 'file' : 'console';
+const level = isProd ? 'info' : 'debug';
+const path = require('path');
 
-const logger = winston.createLogger({
+const options = {
   level: 'info',
-  exitOnError: true,
-  silent: false,
-  format: combine(
-    colorize(),
-    label({ label: 'default' }),
-    timestamp(),
-    myFormat
-  ),
-  transports: []
-});
+  pm2: isProd, // pm2 install pm2-intercom
+  appenders: {
+    console: {
+      type: 'console'
+    },
+    file: {
+      type: 'dateFile',
+      filename: path.join(process.cwd(), 'logs', 'access.log'),
+      pattern: '.yyyy-MM-dd'
+    }
+  },
+  categories: {
+    default: { appenders: [appender], level }
+  }
+};
 
-if (env === 'prod') {
-  logger.add(new DailyRotateFile({
-    level: 'info',
-    filename: 'access-%DATE%.log',
-    datePattern: 'YYYY-MM-DD-HH',
-    zippedArchive: false,
-    maxSize: '50m',
-    maxFiles: '14d',
-    dirname: './logs'
-  }));
-  logger.add(new DailyRotateFile({
-    level: 'error',
-    filename: 'error-%DATE%.log',
-    datePattern: 'YYYY-MM-DD-HH',
-    zippedArchive: false,
-    maxSize: '50m',
-    maxFiles: '14d',
-    dirname: './logs'
-  }));
-} else {
-  logger.add(new winston.transports.Console());
-}
+log4js.configure(options);
 
-module.exports = logger;
+module.exports = {logger: log4js};

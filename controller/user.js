@@ -1,7 +1,5 @@
-const {
-  logger,
-  api: { ok }
-} = require('../utils');
+const { api: { ok } } = require('../utils');
+const logger = require('log4js');
 
 class UserController {
   hi (ctx) {

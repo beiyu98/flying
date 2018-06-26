@@ -1,6 +1,6 @@
 {
   "restartable": "rs",
-  "verbose": true,
+  "verbose": false,
   "colours": true,
   "stdin": true,
   "stdout": true,

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=dev nodemon app.js",
-    "prod": "cross-env NODE_ENV=prod nodemon app.js"
+    "prod": "cross-env NODE_ENV=prod node app.js"
   },
   "repository": {
     "type": "git",
@@ -28,10 +28,9 @@
     "koa-onerror": "^4.0.0",
     "koa-router": "^7.4.0",
     "lodash": "^4.17.10",
+    "log4js": "^2.10.0",
     "moment": "^2.22.2",
-    "parameter": "^2.3.0",
-    "winston": "^3.0.0",
-    "winston-daily-rotate-file": "^3.2.3"
+    "parameter": "^2.3.0"
   },
   "devDependencies": {
     "@types/koa": "^2.0.46",
