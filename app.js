@@ -1,11 +1,9 @@
 const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
-const onerror = require('koa-onerror');
-
 const config = require('./config');
 // utils
-const { helper: { fail }, getLogger } = require('./utils');
-const logger = getLogger('app');
+const { getLogger } = require('./utils');
+const logger = getLogger('APP');
 
 // init mysql
 // require('./model/sequlize');
@@ -18,10 +16,22 @@ const { httpLogger } = require('./middleware');
 const app = new Koa();
 
 // global exception catch
-onerror(app, {
-  all: ctx => {
-    ctx.body = fail(500, 'internal error');
-  }
+// app.onerror(err => {
+//   logger.error(err);
+//   this.body = 'one error';
+//   throw new Error('one error');
+// });
+
+app.use(async (ctx, next) => {
+  ctx.logger = getLogger;
+  await next();
+});
+
+app.on('error', (err, ctx) => {
+  logger.error('----', err);
+  logger.info(err.status, err.message, err.msg, err.data);
+  logger.info(ctx);
+  ctx.res.body = { msg: 'err', data: {} };
 });
 
 app.use(bodyParser());

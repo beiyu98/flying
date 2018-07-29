@@ -1,4 +1,5 @@
 const helper = require('./helper');
 const api = require('./api');
 const getLogger = require('./logger');
-module.exports = { helper, api, getLogger };
+const { JsonError } = require('./error');
+module.exports = { ...helper, ...api, getLogger, JsonError };

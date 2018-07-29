@@ -19,5 +19,4 @@ const sequlize = new Sequlize(
     }
   }
 );
-
 module.exports = {sequlize, Op};

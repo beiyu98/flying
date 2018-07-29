@@ -1,15 +1,14 @@
-const {sequlize} = require('./db');
-const Sequlize = require('sequelize');
-
+const { sequlize } = require('./db');
+const { STRING, NUMBER } = require('sequelize');
 const User = sequlize.define('user', {
   name: {
-    type: Sequlize.STRING
+    type: STRING
   },
   age: {
-    type: Sequlize.NUMBER
+    type: NUMBER
   }
 });
 
-User.sync({force: false});
+User.sync({ force: false });
 
 module.exports = User;

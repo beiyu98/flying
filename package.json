@@ -24,6 +24,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "ioredis": "^3.2.2",
+    "joi": "^13.4.0",
     "koa": "^2.5.1",
     "koa-bodyparser": "^4.2.1",
     "koa-onerror": "^4.0.0",
@@ -37,7 +38,12 @@
     "sequelize": "^4.38.0"
   },
   "devDependencies": {
+    "@types/ioredis": "^3.2.13",
+    "@types/joi": "^13.4.0",
     "@types/koa": "^2.0.46",
+    "@types/koa-bodyparser": "^5.0.1",
+    "@types/koa-router": "^7.0.30",
+    "@types/sequelize": "^4.27.24",
     "cross-env": "^5.2.0",
     "eslint": "^5.0.0",
     "eslint-config-standard": "^11.0.0",
@@ -45,8 +51,6 @@
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
-    "nodemon": "^1.17.5",
-    "ts-node": "^7.0.0",
-    "typescript": "^2.9.2"
+    "nodemon": "^1.17.5"
   }
 }
