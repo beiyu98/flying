@@ -7,7 +7,7 @@ module.exports = {
   "parserOptions": {
     "ecmaVersion": 2018
   },
-  "extends": "standard",
+  // "extends": "standard",
   "rules": {
     //字符串必须单例
     "quotes": ["error", "single"],

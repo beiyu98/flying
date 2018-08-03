@@ -6,7 +6,7 @@ const { getLogger } = require('./utils');
 const logger = getLogger('APP');
 
 // init mysql
-// require('./model/sequlize');
+// require('./model/sequelize');
 
 // init redis
 // require('./model/redis');

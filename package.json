@@ -4,6 +4,7 @@
   "description": "koa app template",
   "main": "index.js",
   "scripts": {
+    "dev":"cross-env NODE_ENV=dev nodemon ./bootstrap/development.js",
     "start": "cross-env NODE_ENV=dev nodemon app.js",
     "prod": "cross-env NODE_ENV=prod node app.js"
   },
@@ -45,6 +46,7 @@
     "@types/koa-router": "^7.0.30",
     "@types/sequelize": "^4.27.24",
     "cross-env": "^5.2.0",
+    "debug": "^3.1.0",
     "eslint": "^5.0.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.13.0",
