@@ -16,6 +16,7 @@ module.exports = class Application extends Koa {
   }
   loadAll(){
     this.loadRoutes();
+    // TODO: 1.service 2.middleware 3.db
   }
   addGlobalMiddleware(middleware){
     this.use(middleware);
